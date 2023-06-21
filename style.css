@@ -24,7 +24,7 @@ header {
     background-color: #007bff;
     color: #fff;
     padding: 40px 20px;
-    animation: slide-down 1s ease;
+    animation: slide-down 2s ease;
 }
 
 .products {
