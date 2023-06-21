@@ -44,11 +44,11 @@ header {
 }
 
 .product:hover {
-    transform: translatewidth(150%);
+    transform: scale(1.5);
 }
 
 .product img {
-    width: 100%;
+    width: 90%;
     max-height: auto;
     object-fit: cover;
 }
