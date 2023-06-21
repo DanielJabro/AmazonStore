@@ -4,27 +4,53 @@
     <title>Giveaway Page</title>
     <style>
         /* Add your CSS styles here */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff5500;
+            font-size: 2em;
+        }
+
         .giveaway-row {
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
+            margin-top: 2em;
         }
-        
+
         .giveaway-box {
-            width: 45%;
+            width: 40%;
             margin: 1em;
             padding: 1em;
-            border: 2px solid #ccc;
+            border: 2px solid #ff5500;
             border-radius: 10px;
-            background-color: #f2f2f2;
+            background-color: #ffc107;
             animation: fade-in 1s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
         }
-        
+
+        .giveaway-box:hover {
+            transform: scale(1.05);
+        }
+
         @keyframes fade-in {
             from {
                 opacity: 0;
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -35,30 +61,30 @@
     <div class="giveaway-row">
         <div class="giveaway-box">
             <!-- Giveaway 1 Content -->
-            <h2>Giveaway 1</h2>
-            <p>Description of Giveaway 1.</p>
-            <button>Join</button>
+            <h2 style="color: #ffffff;">Giveaway 1</h2>
+            <p style="color: #ffffff;">Description of Giveaway 1.</p>
+            <button style="background-color: #ff5500; color: #ffffff;">Join</button>
         </div>
         <div class="giveaway-box">
             <!-- Giveaway 2 Content -->
-            <h2>Giveaway 2</h2>
-            <p>Description of Giveaway 2.</p>
-            <button>Join</button>
+            <h2 style="color: #ffffff;">Giveaway 2</h2>
+            <p style="color: #ffffff;">Description of Giveaway 2.</p>
+            <button style="background-color: #ff5500; color: #ffffff;">Join</button>
         </div>
     </div>
 
     <div class="giveaway-row">
         <div class="giveaway-box">
             <!-- Giveaway 3 Content -->
-            <h2>Giveaway 3</h2>
-            <p>Description of Giveaway 3.</p>
-            <button>Join</button>
+            <h2 style="color: #ffffff;">Giveaway 3</h2>
+            <p style="color: #ffffff;">Description of Giveaway 3.</p>
+            <button style="background-color: #ff5500; color: #ffffff;">Join</button>
         </div>
         <div class="giveaway-box">
             <!-- Giveaway 4 Content -->
-            <h2>Giveaway 4</h2>
-            <p>Description of Giveaway 4.</p>
-            <button>Join</button>
+            <h2 style="color: #ffffff;">Giveaway 4</h2>
+            <p style="color: #ffffff;">Description of Giveaway 4.</p>
+            <button style="background-color: #ff5500; color: #ffffff;">Join</button>
         </div>
     </div>
 
