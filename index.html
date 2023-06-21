@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon Product Advertising</title>
     <style>
+        /* Add your CSS styles here */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 33.33%;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .dropdown-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .dropdown-item-desc {
+            flex: 1;
+        }
+        .dropdown-item button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        /* Add any additional styles as needed */
+    </style>
+    <style>
         /* CSS styles for the homepage */
         body {
             font-family: Arial, sans-serif;
@@ -42,6 +85,27 @@
         <p>Discover amazing pieces and cool gadgets!</p>
         <a align = "right" class="giveaway-button" href="giveaways.html">Go to Giveaways</a>
     </header>
+    <div class="dropdown">
+        <button>Menu &#9662;</button>
+        <div class="dropdown-content">
+            <div class="dropdown-item">
+                <img src="item1.jpg" alt="Item 1">
+                <div class="dropdown-item-desc">
+                    <p>Short description of Item 1</p>
+                </div>
+                <button>View</button>
+            </div>
+            <!-- Repeat the above structure for each item -->
+            <div class="dropdown-item">
+                <img src="item2.jpg" alt="Item 2">
+                <div class="dropdown-item-desc">
+                    <p>Short description of Item 2</p>
+                </div>
+                <button>View</button>
+            </div>
+            <!-- Repeat for other items -->
+        </div>
+    </div>
     <section class="products">
         <div class="product">
             <img src="AmazonProductImages/product1.jpg" alt="Product 1">
