@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giveaways</title>
+    <style>
+        /* CSS styles for the giveaway page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        .giveaway-form {
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .giveaway-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .giveaway-form input[type="text"],
+        .giveaway-form input[type="email"],
+        .giveaway-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .giveaway-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff8800;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giveaways</h1>
+    <p>Enter our exciting giveaways for a chance to win amazing prizes!</p>
+
+    <div class="giveaway-form">
+        <h2>Enter the Giveaway</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
