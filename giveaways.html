@@ -1,5 +1,41 @@
 <!DOCTYPE html>
 <html>
+    <div class="giveaway-container">
+    <div class="giveaway-box">
+        <h2 style="color: #ffffff; font-size: 1.5em;">Giveaway 1</h2>
+        <img src="item1.jpg" alt="Item 1" style="width: 200px; height: 200px;">
+        <p style="color: #ffffff; font-size: 1.2em;">Description of Giveaway 1.</p>
+        <div class="timer" id="timer1"></div>
+        <div class="participants" id="participants1">Participants: 0</div>
+        <button style="background-color: #ff5500; color: #ffffff; font-size: 1.2em;" onclick="showForm(1)">Join</button>
+        <div class="form-container" id="form1" style="display: none;">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+    <div class="giveaway-box">
+        <h2 style="color: #ffffff; font-size: 1.5em;">Giveaway 2</h2>
+        <img src="item2.jpg" alt="Item 2" style="width: 200px; height: 200px;">
+        <p style="color: #ffffff; font-size: 1.2em;">Description of Giveaway 2.</p>
+        <div class="timer" id="timer2"></div>
+        <div class="participants" id="participants2">Participants: 0</div>
+        <button style="background-color: #ff5500; color: #ffffff; font-size: 1.2em;" onclick="showForm(2)">Join</button>
+        <div class="form-container" id="form2" style="display: none;">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showForm(giveawayId) {
+        var form = document.getElementById("form" + giveawayId);
+        form.style.display = "block";
+    }
+</script>
+
 <head>
     <title>Giveaway Page</title>
     <style>
