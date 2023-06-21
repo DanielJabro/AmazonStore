@@ -4,47 +4,63 @@
     <title>Giveaway Page</title>
     <style>
         /* Add your CSS styles here */
+        .giveaway-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .giveaway-box {
+            width: 45%;
+            margin: 1em;
+            padding: 1em;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            animation: fade-in 1s ease-in-out;
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Giveaway Page</h1>
-    
-    <div class="giveaway">
-        <h2>Giveaway 1</h2>
-        <p>Description of the giveaway.</p>
-        <p>End Date: January 1, 2024</p>
-        <button class="join-button" onclick="showForm('Giveaway 1')">Join</button>
-    </div>
-    
-    <div class="giveaway">
-        <h2>Giveaway 2</h2>
-        <p>Description of the giveaway.</p>
-        <p>End Date: February 1, 2024</p>
-        <button class="join-button" onclick="showForm('Giveaway 2')">Join</button>
-    </div>
-    
-    <!-- Add more giveaway divs as needed -->
-    
-    <!-- Form for users to input their information -->
-    <div id="form-container" style="display: none;">
-        <h2 id="giveaway-title"></h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="contact-method">Best Way to Contact:</label>
-            <input type="text" id="contact-method" required>
-            <button type="submit">Submit</button>
-        </form>
+
+    <div class="giveaway-row">
+        <div class="giveaway-box">
+            <!-- Giveaway 1 Content -->
+            <h2>Giveaway 1</h2>
+            <p>Description of Giveaway 1.</p>
+            <button>Join</button>
+        </div>
+        <div class="giveaway-box">
+            <!-- Giveaway 2 Content -->
+            <h2>Giveaway 2</h2>
+            <p>Description of Giveaway 2.</p>
+            <button>Join</button>
+        </div>
     </div>
 
-    <script>
-        // Function to show the form when the join button is clicked
-        function showForm(giveawayTitle) {
-            document.getElementById("giveaway-title").textContent = giveawayTitle;
-            document.getElementById("form-container").style.display = "block";
-        }
-    </script>
+    <div class="giveaway-row">
+        <div class="giveaway-box">
+            <!-- Giveaway 3 Content -->
+            <h2>Giveaway 3</h2>
+            <p>Description of Giveaway 3.</p>
+            <button>Join</button>
+        </div>
+        <div class="giveaway-box">
+            <!-- Giveaway 4 Content -->
+            <h2>Giveaway 4</h2>
+            <p>Description of Giveaway 4.</p>
+            <button>Join</button>
+        </div>
+    </div>
+
 </body>
 </html>
