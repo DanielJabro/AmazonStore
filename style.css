@@ -44,14 +44,13 @@ header {
 }
 
 .product:hover {
-    transform: translateY(-5px);
+    transform: translatewidth(150%);
 }
 
 .product img {
     width: 100%;
     max-height: auto;
     object-fit: cover;
-    animation: pulse 2s infinite;
 }
 
 .product h3 {
@@ -95,11 +94,6 @@ header {
         transform: translateY(0);
     }
 }
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
     50% {
         transform: scale(1.05);
     }
