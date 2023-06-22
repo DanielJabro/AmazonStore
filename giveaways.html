@@ -41,6 +41,15 @@
             border-radius: 5px;
             padding: 20px;
             flex-basis: 48%;
+            position: relative;
+            animation: box-animation 1s infinite alternate;
+        }
+        .giveaway-box:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        @keyframes box-animation {
+            from { transform: translateY(0); }
+            to { transform: translateY(10px); }
         }
         .giveaway-timer {
             font-size: 24px;
@@ -58,84 +67,130 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .giveaway-form {
+            display: none;
+            margin-top: 20px;
+        }
+        .giveaway-form input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .giveaway-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Giveaways!</h1>
-        <a href="index.html">Go Back to Home</a>
+        <a href="home.html">Go Back to Home</a>
     </div>
     <div class="giveaway-container">
         <div class="giveaway-row">
             <div class="giveaway-box">
                 <h2>Giveaway 1</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer1"></span></div>
-                <button class="giveaway-join-button" onclick="promptForNameAndEmail(1)">Join</button>
+                <button class="giveaway-join-button" onclick="showJoinForm(1)">Join</button>
+                <form id="joinForm1" class="giveaway-form" onsubmit="submitForm(event, 1)">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
             <div class="giveaway-box">
                 <h2>Giveaway 2</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer2"></span></div>
-                <button class="giveaway-join-button" onclick="promptForNameAndEmail(2)">Join</button>
+                <button class="giveaway-join-button" onclick="showJoinForm(2)">Join</button>
+                <form id="joinForm2" class="giveaway-form" onsubmit="submitForm(event, 2)">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
         <div class="giveaway-row">
             <div class="giveaway-box">
                 <h2>Giveaway 3</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer3"></span></div>
-                <button class="giveaway-join-button" onclick="promptForNameAndEmail(3)">Join</button>
+                <button class="giveaway-join-button" onclick="showJoinForm(3)">Join</button>
+                <form id="joinForm3" class="giveaway-form" onsubmit="submitForm(event, 3)">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
             <div class="giveaway-box">
                 <h2>Giveaway 4</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer4"></span></div>
-                <button class="giveaway-join-button" onclick="promptForNameAndEmail(4)">Join</button>
+                <button class="giveaway-join-button" onclick="showJoinForm(4)">Join</button>
+                <form id="joinForm4" class="giveaway-form" onsubmit="submitForm(event, 4)">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
     </div>
 
     <script>
-        // Add your JavaScript code here for the timers and prompt
-        // You can use JavaScript libraries or frameworks for countdown timers
-        // Here's an example using vanilla JavaScript for the countdown timer:
-        
+        // Add your JavaScript code here for the timers and join form
+
         // Set the end date and time for each giveaway
         const endDate1 = new Date('2023-07-01 12:00:00');
         const endDate2 = new Date('2023-07-02 18:30:00');
         const endDate3 = new Date('2023-07-03 10:15:00');
         const endDate4 = new Date('2023-07-04 09:00:00');
-        
+
         // Update the countdown timers every second
         setInterval(updateTimers, 1000);
-        
+
         function updateTimers() {
             updateTimer('timer1', endDate1);
             updateTimer('timer2', endDate2);
             updateTimer('timer3', endDate3);
             updateTimer('timer4', endDate4);
         }
-        
+
         function updateTimer(elementId, endDate) {
             const now = new Date().getTime();
             const timeLeft = endDate - now;
-        
+
             // Calculate remaining days, hours, minutes, and seconds
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-        
+
             // Display the remaining time in the specified element
-            const timerElement = document.getElementById(elementId);
-            timerElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
-        
-        function promptForNameAndEmail(giveawayId) {
-            const name = prompt("Please enter your name:");
-            const email = prompt("Please enter your email:");
-            
-            // Perform further processing with the name and email data
-            
-            // For example, you can display an alert with the entered information
-            alert("Thank you for joining Giveaway " + giveawayId + "!\n\nName: " + name + "\nEmail: " + email);
+
+        function showJoinForm(giveawayNumber) {
+            const joinForm = document.getElementById(`joinForm${giveawayNumber}`);
+            joinForm.style.display = 'block';
+        }
+
+        function submitForm(event, giveawayNumber) {
+            event.preventDefault();
+            const name = document.getElementById(`joinForm${giveawayNumber}`).elements[0].value;
+            const email = document.getElementById(`joinForm${giveawayNumber}`).elements[1].value;
+
+            // You can handle form submission here, e.g., sending the data to a server
+
+            // Clear the form inputs after submission
+            document.getElementById(`joinForm${giveawayNumber}`).reset();
         }
     </script>
 </body>
