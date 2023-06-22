@@ -14,7 +14,6 @@ body {
 
 header, .products, footer {
     max-width: 1000px;
-    max-height: 50px;
     margin: 0 auto;
     padding: 20px;
     animation: fade-in 1s ease;
