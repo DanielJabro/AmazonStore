@@ -36,10 +36,20 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
-        .giveaway-box {
+        .left-giveaway-box {
+            margin-right: 20px;
             background-color: #ffffff;
             border-radius: 5px;
-            padding: 50px;
+            padding: 20px;
+            flex-basis: 48%;
+            position: relative;
+            animation: box-animation 1s infinite alternate;
+        }
+        .right-giveaway-box {
+            margin-left: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
             flex-basis: 48%;
             position: relative;
             animation: box-animation 1s infinite alternate;
@@ -99,7 +109,7 @@
     </div>
     <div class="giveaway-container">
         <div class="giveaway-row">
-            <div class="giveaway-box">
+            <div class="left-giveaway-box">
                 <h2>Giveaway 1</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer1"></span></div>
                 <button class="giveaway-join-button" onclick="showJoinForm(1)">Join</button>
@@ -109,7 +119,7 @@
                     <button type="submit">Submit</button>
                 </form>
             </div>
-            <div class="giveaway-box">
+            <div class="right-giveaway-box">
                 <h2>Giveaway 2</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer2"></span></div>
                 <button class="giveaway-join-button" onclick="showJoinForm(2)">Join</button>
@@ -121,7 +131,7 @@
             </div>
         </div>
         <div class="giveaway-row">
-            <div class="giveaway-box">
+            <div class="left-giveaway-box">
                 <h2>Giveaway 3</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer3"></span></div>
                 <button class="giveaway-join-button" onclick="showJoinForm(3)">Join</button>
@@ -131,7 +141,7 @@
                     <button type="submit">Submit</button>
                 </form>
             </div>
-            <div class="giveaway-box">
+            <div class="right-giveaway-box">
                 <h2>Giveaway 4</h2>
                 <div class="giveaway-timer">Ends in: <span id="timer4"></span></div>
                 <button class="giveaway-join-button" onclick="showJoinForm(4)">Join</button>
